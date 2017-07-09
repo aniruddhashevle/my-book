@@ -1,0 +1,14 @@
+{
+   "expo": {
+    "name": "My Book",
+    "version": "1.0.0",
+    "slug": "exp.host/@aniruddhashevle/react-native-my-book",
+    "sdkVersion": "17.0.0",
+    "ios": {
+      "bundleIdentifier": "com.awesomejourney.mybook"
+    },
+    "android": {
+      "package": "com.awesomejourney.mybook"
+    }
+   }
+}
