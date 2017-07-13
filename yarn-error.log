@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\ADMIN\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add redux@3.6.0 redux-thunk@2.1.0 react-redux@4.4.5 --save
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js install
 
 PATH: 
-  C:\Users\ADMIN\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\ADMIN\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files (x86)\QT Lite\QTSystem;C:\Program Files (x86)\QT Lite\QTSystem;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\wamp\bin\php\php5.4.12;C:\ProgramData\ComposerSetup\bin;C:\Program Files (x86)\Skype\Phone;C:\Ruby22-x64\bin;C:\Program Files\Java\jdk1.8.0\bin;C:\Program Files\Java\jre\bin;.;C:\Users\ADMIN\AppData\Roaming\npm;C:\Users\ADMIN\AppData\Roaming\Composer\vendor\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+  C:\Users\ADMIN\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\ADMIN\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files (x86)\QT Lite\QTSystem;C:\Program Files (x86)\QT Lite\QTSystem;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\wamp\bin\php\php5.4.12;C:\ProgramData\ComposerSetup\bin;C:\Program Files (x86)\Skype\Phone;C:\Program Files (x86)\Yarn\bin;C:\Ruby22-x64\bin;C:\Program Files\Java\jdk1.8.0\bin;C:\Program Files\Java\jre\bin;.;C:\Users\ADMIN\AppData\Roaming\npm;C:\Users\ADMIN\AppData\Roaming\Composer\vendor\bin;C:\Users\ADMIN\AppData\Local\Yarn\bin;C:\Program Files\Java\jdk1.8.0_20\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
 
 Yarn version: 
   0.27.5
@@ -19,8 +19,8 @@ npm manifest:
     "version": "0.1.0",
     "private": true,
     "devDependencies": {
-      "react-native-scripts": "0.0.40",
       "jest-expo": "~18.0.0",
+      "react-native-scripts": "0.0.40",
       "react-test-renderer": "16.0.0-alpha.12"
     },
     "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
@@ -37,7 +37,10 @@ npm manifest:
     "dependencies": {
       "expo": "^18.0.3",
       "react": "16.0.0-alpha.12",
-      "react-native": "^0.45.1"
+      "react-native": "^0.45.1",
+      "react-redux": "4.4.5",
+      "redux": "3.6.0",
+      "redux-thunk": "2.1.0"
     }
   }
 
@@ -4381,6 +4384,15 @@ Lockfile:
       lodash "^4.6.1"
       react-deep-force-update "^1.0.0"
   
+  react-redux@4.4.5:
+    version "4.4.5"
+    resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-4.4.5.tgz#f509a2981be2252d10c629ef7c559347a4aec457"
+    dependencies:
+      hoist-non-react-statics "^1.0.3"
+      invariant "^2.0.0"
+      lodash "^4.2.0"
+      loose-envify "^1.1.0"
+  
   react-redux@^5.0.2:
     version "5.0.5"
     resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-5.0.5.tgz#f8e8c7b239422576e52d6b7db06439469be9846a"
@@ -4480,6 +4492,19 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/redux-logger/-/redux-logger-2.10.2.tgz#3c5a5f0a6f32577c1deadf6655f257f82c6c3937"
     dependencies:
       deep-diff "0.3.4"
+  
+  redux-thunk@2.1.0:
+    version "2.1.0"
+    resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.1.0.tgz#c724bfee75dbe352da2e3ba9bc14302badd89a98"
+  
+  redux@3.6.0:
+    version "3.6.0"
+    resolved "https://registry.yarnpkg.com/redux/-/redux-3.6.0.tgz#887c2b3d0b9bd86eca2be70571c27654c19e188d"
+    dependencies:
+      lodash "^4.2.1"
+      lodash-es "^4.2.1"
+      loose-envify "^1.1.0"
+      symbol-observable "^1.0.2"
   
   redux@^3.6.0:
     version "3.7.1"
@@ -5095,7 +5120,7 @@ Lockfile:
       lower-case "^1.1.1"
       upper-case "^1.1.1"
   
-  symbol-observable@^1.0.3:
+  symbol-observable@^1.0.2, symbol-observable@^1.0.3:
     version "1.0.4"
     resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.0.4.tgz#29bf615d4aa7121bdd898b22d4b3f9bc4e2aa03d"
   
@@ -5423,7 +5448,7 @@ Lockfile:
     version "4.0.1"
     resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-4.0.1.tgz#8015a17ab83e7e1b311638486ace81da6ce206a0"
   
-  "websql@github:expo/node-websql#18.0.0":
+  websql@expo/node-websql#18.0.0:
     version "0.4.4"
     resolved "https://codeload.github.com/expo/node-websql/tar.gz/e364fa65146a9e2157a19e5c719e7702c2b6b87a"
     dependencies:
@@ -5684,4 +5709,4 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/yesno/-/yesno-0.0.1.tgz#ffbc04ff3d6f99dad24f7463134e9b92ae41bef6"
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'E:\AniS\AwesomeProject\node_modules\react-native-html-to-text\lib'
+  Error: https://codeload.github.com/expo/node-websql/tar.gz/e364fa65146a9e2157a19e5c719e7702c2b6b87a: ENOSPC: no space left on device, write
