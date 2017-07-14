@@ -16,9 +16,9 @@ export function getBookDetails() {
           // dispatch(updateCustomerInfo(updatedCart));
 
           // dispatch(receiveBookData());
+          return response.data.response;
         }
-
-        return response.data.response;
+        return false;
       })
       .catch(err => {
         return err.response;
