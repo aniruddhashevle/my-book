@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView, Button, ActivityIndicator, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native';
 
 //actions
 import { getBookDetails } from '../actions/';
@@ -13,26 +13,15 @@ export default class BooksList extends Component {
 		super(props);
 		this.state = {
       showBook: false,
-      bookData: '',
-      isFetching: false,
+      bookData: ''
 		}
 		this.getBookData = this.getBookData.bind(this);
 	}
 
 	getBookData() {
-    this.setState({
-      showBook: !this.state.showBook,
-    });
-    if(!this.state.showBook) {
-      this.setState({
-        isFetching: true
-      });
-    }
+    this.setState({ showBook: !this.state.showBook });
 		getBookDetails().then( resp => {
-      this.setState({
-        bookData: resp.text,
-        isFetching: false
-      });
+      this.setState({ bookData: resp });
     });
 	}
 
@@ -42,22 +31,11 @@ export default class BooksList extends Component {
         <TouchableOpacity
           activeOpacity={0.6}
           onPress={this.getBookData}
-          style={[
-            styles.defaultButton,
-          ]}
+          style={styles.defaultButton}
          >
-          <Text style={[styles.defaultButtonText]}>
+          <Text style={styles.defaultButtonText}>
             AWESOME BOOK
           </Text>
-          {
-            this.state.isFetching ?          
-              <ActivityIndicator
-                animating={this.state.isFetching} 
-                style={styles.verticallyCentering}
-                size="small"
-              />
-            : <Text></Text>
-          }
         </TouchableOpacity>
         {
           this.state.showBook && this.state.bookData ?
@@ -75,17 +53,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#aaf'
-  },
-  verticallyCentering: {
-    flex: 1,
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    right: 10,
-    zIndex: 5,
-    opacity: 0.8,
-    backgroundColor: 'transparent'
+    backgroundColor: '#c496ef'
   },
   defaultButton: {
     flexDirection: 'row',
@@ -95,8 +63,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     paddingHorizontal: 20,
     paddingVertical: 10,
-    marginBottom: 15,
-    height: 45,
+    marginBottom: 25,
     justifyContent: 'center',
     shadowColor: 'darkgrey',
     shadowOffset: {
