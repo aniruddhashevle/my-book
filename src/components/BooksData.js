@@ -1,3 +1,7 @@
+/* =============================================================================
+   imports
+============================================================================= */
+/* node modules */
 import React, { Component } from 'react';
 import { 
 	StyleSheet,
@@ -7,7 +11,17 @@ import {
 } from 'react-native';
 import HtmlText  from 'react-native-html-to-text';
 
+
+/* =============================================================================
+   BookData component
+============================================================================= */
 export default class BooksData extends Component {
+
+  /**
+   * render DOM
+   *
+   * @return Object
+   */
   render() {
     return (
       <ScrollView contentContainerStyle={styles.contentContainer}>
@@ -18,13 +32,18 @@ export default class BooksData extends Component {
       </ScrollView>
     );
   }
+  
 }
 
+
+/* =============================================================================
+   Styles for BookData component
+============================================================================= */
 const styles = StyleSheet.create({
   contentContainer: {
     paddingVertical: 20,
-    paddingHorizontal: 20,
-    backgroundColor: '#deace2'
+    paddingHorizontal: 15,
+    backgroundColor: '#e3bee6'
   },
   container: {
     flex: 1,

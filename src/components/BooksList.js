@@ -1,30 +1,67 @@
+/* =============================================================================
+   imports
+============================================================================= */
+/* node modules */
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native';
+import { 
+  StyleSheet,
+  Text,
+  View, 
+  ScrollView,
+  TouchableOpacity,
+  Alert
+} from 'react-native';
 
-//actions
+/* actions */
 import { getBookDetails } from '../actions/';
 
-//components
+/* components */
 import BooksData from './BooksData';
 
+
+/* =============================================================================
+   BookList component
+============================================================================= */
 export default class BooksList extends Component {
 
-	constructor(props) {
-		super(props);
-		this.state = {
+  constructor(props) {
+    super(props);
+    this.state = {
       showBook: false,
       bookData: ''
-		}
-		this.getBookData = this.getBookData.bind(this);
-	}
+    }
+    this.getBookData = this.getBookData.bind(this);
+  }
 
-	getBookData() {
+  /**
+   * call action and get the book data and set states
+   *
+   * @return void
+   */
+  getBookData() {
     this.setState({ showBook: !this.state.showBook });
-		getBookDetails().then( resp => {
-      this.setState({ bookData: resp });
-    });
-	}
+    getBookDetails().then(resp => {
+        console.log("resp", resp);
+      if(resp && !resp.status) {
+        this.setState({ bookData: resp });        
+      }
+      else {
+        Alert.alert(
+          'Warning!',
+          'Something went wrong. Please check you internet connection!!!',
+          [
+            {text: 'OK'},
+          ]
+        )
+      }
+    })
+  }
 
+  /**
+   * render DOM
+   *
+   * @return Object
+   */
   render() {
     return (
       <View style={styles.container}>
@@ -45,8 +82,13 @@ export default class BooksList extends Component {
       </View>
     );
   }
+
 }
 
+
+/* =============================================================================
+   Styles for BookList component
+============================================================================= */
 const styles = StyleSheet.create({
   container: {
     paddingTop: 50,

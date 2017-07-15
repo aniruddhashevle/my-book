@@ -1,4 +1,8 @@
-// Rough implementation. Untested.
+/**
+ * async Promise
+ *
+ * @return Object
+ */
 export function timeout(ms, promise) {
   return new Promise(function(resolve, reject) {
     setTimeout(function() {
@@ -8,7 +12,6 @@ export function timeout(ms, promise) {
           data: 'Unable to connect! Please check your internet connection and try again.'
         }
       };
-
       reject(error);
     }, ms);
     promise.then(resolve, reject);

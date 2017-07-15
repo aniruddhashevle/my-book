@@ -1,23 +1,27 @@
+/* =============================================================================
+   imports
+============================================================================= */
+/* node modules */
 import React, { Component } from 'react';
-import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from 'redux';
 
-// Middleware
-import ReduxThunk from 'redux-thunk';
-
-// Reducers
-// import reducers from './reducers/';
-
-// Import the BooksList Component
+/* components */
 import BooksList from './src/components/BooksList';
 
-const createStoreWithMiddleware = applyMiddleware(ReduxThunk)(createStore);
 
-
+/* =============================================================================
+   App component
+============================================================================= */
 export default class App extends Component {
+
+	/**
+	 * render DOM
+	 *
+	 * @return Object
+	 */
   render() {
     return (
-	    <BooksList />
+	  	<BooksList />
     );
   }
+
 }
